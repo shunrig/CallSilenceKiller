@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.telecom.TelecomManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 /**
@@ -37,7 +37,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
             return;
         }
 
-        if (Intent.ACTION_PHONE_STATE.equals(action)) {
+        if (TelephonyManager.ACTION_PHONE_STATE_CHANGED.equals(action)) {
             String state = intent.getStringExtra("state");
             String number = intent.getStringExtra("incoming_number");
             Log.d(TAG, "电话状态: " + state + " | " + number);
