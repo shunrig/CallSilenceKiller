@@ -212,7 +212,7 @@ public class CallMonitorService extends Service {
                             mLastSpeechMs = now;
 
                             Log.v(TAG, "语音活动 +" + mConsecutiveSpeechFrames
-                                    + "帧 | 分贝:" + lastDb() + " | ZCR:" + lastZcr());
+                                    + "帧 | 分贝:" + lastDb + " | ZCR:" + lastZcr);
 
                             // 最小语音时长闸门：连续 SPEECH_FRAMES_THRESHOLD 帧（1.5s）
                             if (mConsecutiveSpeechFrames >= SPEECH_FRAMES_THRESHOLD) {
